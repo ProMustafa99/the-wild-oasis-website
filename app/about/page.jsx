@@ -3,8 +3,15 @@ import Link from 'next/link';
 
 import about1 from '@/public/about1.jpg';
 import about2 from '@/public/about2.jpg';
+import { getCabins } from "../_lib/data-service";
+
+
+export const revalodate = 86400;
 
 export default function Page() {
+
+  const cabins = getCabins();
+
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
@@ -21,7 +28,7 @@ export default function Page() {
             simple pleasures with family.
           </p>
           <p>
-            Our 8 luxury cabins provide a cozy base, but the real freedom and
+            Our {cabins.length} luxury cabins provide a cozy base, but the real freedom and
             peace you'll find in the surrounding mountains. Wander through lush
             forests, breathe in the fresh air, and watch the stars twinkle above
             from the warmth of a campfire or your hot tub.
@@ -48,7 +55,7 @@ export default function Page() {
         <h1 className="text-4xl mb-10 text-accent-400 font-medium">
           Managed by our family since 1962
         </h1>
-
+ 
         <div className="space-y-8">
           <p>
             Since 1962, The Wild Oasis has been a cherished family-run retreat.

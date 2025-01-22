@@ -1,3 +1,5 @@
+"use clinet"
+
 import { isWithinInterval } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
@@ -26,6 +28,7 @@ function DateSelector() {
 
   return (
     <div className="flex flex-col justify-between">
+
       <DayPicker
         className="pt-12 place-self-center"
         mode="range"
