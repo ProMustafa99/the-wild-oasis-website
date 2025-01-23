@@ -1,4 +1,4 @@
-"use clinet"
+"use client"
 
 import { isWithinInterval } from "date-fns";
 import { DayPicker } from "react-day-picker";
