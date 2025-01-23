@@ -2,6 +2,7 @@ import React from 'react';
 import Headar from "@/app/_components/Header";
 import "@/app/_styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
+import ReservationProvider from './_components/ReservationContext';
 
 const jsosefin = Josefin_Sans({
   subsets: ['latin'],
@@ -35,7 +36,10 @@ export default function RootLayout({ children }) {
 
         <div className='flex-1 px-8 py-12 '>
           <main className='max-w-7xl mx-auto w-full' >
-            {children}
+            <ReservationProvider>
+              {children}
+            </ReservationProvider>
+
           </main>
         </div>
 
@@ -43,7 +47,7 @@ export default function RootLayout({ children }) {
         <footer>
           Copyright by The Wild Oasis
         </footer>
-      </body>
+      </body> 
     </html>
   );
 }

@@ -1,9 +1,14 @@
+"use client"
+
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { format } from 'date-fns';
+import { useReservation } from './ReservationContext';
 
 function ReservationReminder() {
+
+  const {range} = useReservation();
+
   // CHANGE
-  const range = { from: null, to: null };
 
   if (!range.from || !range.to) return null;
 
