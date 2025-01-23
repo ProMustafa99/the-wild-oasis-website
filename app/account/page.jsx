@@ -1,4 +1,5 @@
 import React from 'react';
+import { auth } from '../_lib/auth';
 
 
 export const metadata = {
@@ -6,10 +7,13 @@ export const metadata = {
 };
 
 
-export default function page() {
+export default async function page() {
+
+  const session = await auth();
+
   return (
     <div className=''>
-       Welcome Mustafa
+       Welcome ,{session.user.name}
     </div>
   );
 }
